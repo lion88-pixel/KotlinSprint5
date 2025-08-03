@@ -11,7 +11,7 @@ class Robot {
         "Kotlin - отличный язык!"
     )
 
-    private var modifier: ((String) -> String)? = null
+    private var modifier: (String) -> String = { it }
 
     fun setModifier(newModifier: (String) -> String) {
         modifier = newModifier
@@ -19,7 +19,7 @@ class Robot {
 
     fun say() {
         val phrase = phrases[Random.nextInt(phrases.size)]
-        val modifiedPhrase = modifier?.invoke(phrase) ?: phrase
+        val modifiedPhrase = modifier(phrase)
         println(modifiedPhrase)
     }
 }
@@ -30,7 +30,6 @@ fun reverseWords(text: String): String {
 
 fun main() {
     val robot = Robot()
-
     println("Робот говорит (обычная фраза):")
     robot.say()
     println("\nУстанавливаем модификатор (инвертирование слов)...")
