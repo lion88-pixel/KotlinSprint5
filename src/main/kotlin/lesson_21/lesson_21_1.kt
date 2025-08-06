@@ -1,14 +1,7 @@
 package lesson_21
 
 fun String.vowelCount(): Int {
-    val vowels = "aeiouAEIOU"
-    var count = 0
-    for (char in this) {
-        if (vowels.contains(char)) {
-            count++
-        }
-    }
-    return count
+    return count { it in "aeiouAEIOU" }
 }
 
 fun main() {
