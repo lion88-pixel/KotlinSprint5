@@ -11,8 +11,8 @@ fun main() {
     val dataBook2 = DataBook("The Hobbit", "Tolkien")
     val regularComparison = regularBook1 == regularBook2
     println("RegularBook comparison: $regularComparison")
-    //Обычные классы сравниваются по ссылке (адресу в памяти). Если свойства одинаковы, это разные объекты, поэтому результат - false.
+    // Обычные классы сравниваются по ссылке (адресу в памяти). Если свойства одинаковы, это разные объекты, поэтому результат - false.
     val dataComparison = dataBook1 == dataBook2
     println("DataBook comparison: $dataComparison")
-    //Data классы реализуют equals() и hashCode() на основе свойств класса. Экземпляры сравниваются по значениям их свойств, и в данном случае они равны.
+    // Data классы реализуют equals() и hashCode() на основе свойств класса. Экземпляры сравниваются по значениям их свойств, и в данном случае они равны.
 }
